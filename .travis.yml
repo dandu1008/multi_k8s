@@ -21,3 +21,16 @@ after_success:
   - docker push dandu1008/multi-nginx
   - docker push dandu1008/multi-server
   - docker push dandu1008/multi-worker
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-212730683172"
+  bucket_path: "multi-docker-app"
+  on:
+    branch: master
+  access_key_id: 
+    secure: "$AWS_ACCESS_KEY_ID"
+  secret_access_key:
+    secure: "$AWS_SECRET_ACCESS_KEY"
