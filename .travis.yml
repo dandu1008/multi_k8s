@@ -8,22 +8,22 @@ before_install:
 #   - docker build -t dandu1008/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - echo "Hello Docker"
+  - echo "Hello Docker"
 #   - docker run dandu1008/react-test npm run test -- --coverage
 
 after_success:
-    - echo "Hello Docker"
-#   - docker build -t dandu1008/multi-client ./client
-#   - docker build -t dandu1008/multi-nginx ./nginx
-#   - docker build -t dandu1008/multi-server ./server
-#   - docker build -t dandu1008/multi-worker ./worker
-   # Login into Docker CLI
-#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-   # Push above images to DockerHub
-#   - docker push dandu1008/multi-client
-#   - docker push dandu1008/multi-nginx
-#   - docker push dandu1008/multi-server
-#   - docker push dandu1008/multi-worker
+  - echo "Hello Docker"
+  - docker build -t dandu1008/multi-client ./client
+  - docker build -t dandu1008/multi-nginx ./nginx
+  - docker build -t dandu1008/multi-server ./server
+  - docker build -t dandu1008/multi-worker ./worker
+  # Login into Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Push above images to DockerHub
+  - docker push dandu1008/multi-client
+  - docker push dandu1008/multi-nginx
+  - docker push dandu1008/multi-server
+  - docker push dandu1008/multi-worker
   
 deploy:
   provider: elasticbeanstalk
