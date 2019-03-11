@@ -1,6 +1,13 @@
 {
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
+       {
+        "name": "server",
+        "image": "dandu1008/multi-server",
+        "hostname": "api",
+        "essential": false,
+        "memory": 128
+      },
       {
         "name": "worker",
         "image": "dandu1008/multi-worker",
