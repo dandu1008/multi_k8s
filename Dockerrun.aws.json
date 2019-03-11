@@ -19,14 +19,14 @@
       "name": "worker",
       "image": "dandu1008/multi-worker",
       "hostname": "worker",
-      "essential": false,
+      "essential": true,
       "memory": 128
     },
     {
       "name": "nginx",
       "image": "dandu1008/multi-nginx",
       "hostname": "nginx",
-      "essential": true,
+      "essential": false,
       "memory": 128,
       "portMappings": [
           {
